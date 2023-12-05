@@ -21,7 +21,7 @@
         <div class="pokemon">
             <div id="hpCharmanderr"></div>
             <img src="imagens/pokemons/chamander2.svg" alt="Charmander Batalhando">
-            <button class="buttonatk" onclick="executarAtaque()">Atacar</button>
+            <button class="buttonatk" id="botaoatk" onclick="executarAtaque()">Atacar</button>
             <button class="buttoncurar" onclick="curarC()">Curar</button>
         </div>
 
@@ -34,6 +34,9 @@
 
         <audio controls autoplay class="musicas" loop="true">
             <source src="musicas/battlemusic.mp3" type="audio/mp3">
+        </audio>
+        <audio controls class="efeitoatk" loop="false">
+            <source src="musicas/efeitoatk.mp3" type="audio/mp3">
         </audio>
 
     </main>

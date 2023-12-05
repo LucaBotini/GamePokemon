@@ -173,6 +173,6 @@ form{
     margin-left: 20px;
 }
 
-.musicas{
+.musicas, .efeitoatk{
     display: none;
 }
