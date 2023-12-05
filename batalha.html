@@ -17,18 +17,24 @@
     <h1 class="estamosfelizes">VOCÊ ESTÁ BATALHANDO CONTRA: <strong>EQUIPE ROCKET</strong></h1>
     
     <main class="mainbatalhaginasio">
-    
-        <div class="rival">
-            <div id="hpInimigo"></div>
-            <img class="equiperocket" src="imagens/pokemons/equiperocketrival.png" alt="Equipe Rocket Pokémon">
-        </div>
 
         <div class="pokemon">
-            <img src="imagens/pokemons/charmander.svg" alt="Charmander Batalhando">
-            <button onclick="executarAtaque()">Atacar</button>
-            <button onclick="curarC()">Curar</button>
+            <div id="hpCharmanderr"></div>
+            <img src="imagens/pokemons/chamander2.svg" alt="Charmander Batalhando">
+            <button class="buttonatk" onclick="executarAtaque()">Atacar</button>
+            <button class="buttoncurar" onclick="curarC()">Curar</button>
         </div>
-        <a href="index.html">menu</a>
+
+            <div><img src="imagens/vs.png" alt=""></div>
+
+        <div class="rival">
+            <img class="equiperocket" src="imagens/pokemons/equiperocketrival.png" alt="Equipe Rocket Pokémon">
+            <div id="hpInimigo"></div>
+        </div>
+
+        <audio controls autoplay class="musicas" loop="true">
+            <source src="musicas/battlemusic.mp3" type="audio/mp3">
+        </audio>
 
     </main>
 

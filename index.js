@@ -1,6 +1,10 @@
 let danoFinal = 0;
 let hpInimigo = 230
 
+//HP DE CADA POKÉMON
+let hpCharmander = 170;
+let hpBulbasaur = 155;
+let hpSquirtle = 160;
 
 //ATK DE CADA POKÉMON
 let atkCharmander;
@@ -11,10 +15,12 @@ let atkSquirtle = gerarNumeroAleatorio(8, 35);
 let mostrarhpInimigo = document.getElementById('hpInimigo')
 mostrarhpInimigo.textContent = `HP DO RIVAL: ${hpInimigo}`
 
-//HP DE CADA POKÉMON
-let hpCharmander = 170;
-let hpBulbasaur = 155;
-let hpSquirtle = 160;
+
+//MOSTAR VIDA DO MEU POKÉMON
+let mostrarhpCharmanderr = document.getElementById('hpCharmanderr')
+mostrarhpCharmanderr.textContent = `HP DO CHARMANDER: ${hpCharmander}`
+
+
 
 //FUNÇÃO AO CLICAR EM ATACAR
    atkCharmander = gerarNumeroAleatorio(5, 40)
@@ -32,8 +38,8 @@ function executarAtaque() {
 
     mostrarhpInimigo.textContent = `HP DO RIVAL: ${hpInimigo}`;
     if(hpInimigo <= 0){
+        mostrarhpInimigo.textContent = `HP DO RIVAL: 0`;
         alert('Você Venceu!')
-        hpInimigo - hpInimigo + 230
     }
 }
 
@@ -48,3 +54,6 @@ let curaSquirtle = gerarNumeroAleatorio(4, 12);
 function gerarNumeroAleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+
+document.querySelector('audio').volume = 0.2;

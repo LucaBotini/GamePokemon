@@ -1,5 +1,16 @@
 html{box-sizing: border-box;font-size: 16px;}:before,*:after {box-sizing: inherit;}body,h1,h2,h3,h4,h5,h6,p,ol,ul{margin: 0;padding: 0;font-weight: normal;}ol,ul{list-style: none;}img{max-width: 100%;height: auto;}
 @import url('https://fonts.cdnfonts.com/css/pokemon-solid');@import url('https://fonts.cdnfonts.com/css/noto-serif-malayalam');
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
 body{
     height: 89vh;
@@ -42,7 +53,6 @@ header{
 
 .mainbatalhaginasio{
     display: flex;
-    justify-content: space-between;
 }
 
 .pokemonsfeliz{
@@ -109,14 +119,16 @@ form{
 }
 
 .pokemon{
-    width: 400px;
-    margin-top: 350px;
-    order: 1;
+    width: 700px;
 }
 
-.rival{
-    display: flex;
-    order: 2;
+#hpCharmanderr{
+    margin-top: 10px;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.459);
+    height: 30px;
+    color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 #hpInimigo{
@@ -125,8 +137,42 @@ form{
     background-color: rgba(0, 0, 0, 0.459);
     height: 30px;
     color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.buttonatk{
+    margin-left: 200px;
+    color: white;
+    border: solid;
+    border-color: rgb(0, 247, 0);
+    background-color: rgba(0, 0, 0, 0.233);
+    border-radius: 15px;
+    font-size: 25px;
+}
+
+.buttonatk:hover{
+    animation: pulse 1.5s infinite;
+}
+
+.buttoncurar{
+    margin-left: 50px;
+    color: white;
+    border: solid;
+    font-size: 25px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.233);
+    border-color: rgb(0, 255, 242);
+}
+
+.buttoncurar:hover{
+    animation: pulse 1.5s infinite;
 }
 
 .equiperocket{
     width: 700px;
+    margin-left: 20px;
+}
+
+.musicas{
+    display: none;
 }
