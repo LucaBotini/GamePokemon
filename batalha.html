@@ -21,22 +21,30 @@
         <div class="pokemon">
             <div id="hpCharmanderr"></div>
             <img src="imagens/pokemons/chamander2.svg" alt="Charmander Batalhando">
-            <button class="buttonatk" id="botaoatk" onclick="executarAtaque()">Atacar</button>
-            <button class="buttoncurar" onclick="curarC()">Curar</button>
+            <button class="buttonatk" id="botaoatk" onclick="executarAtaque(), exibirPopup()">Atacar</button>
+            <button class="buttoncurar" id="botaocura" onclick="executarCura(), exibirPopup()">Curar</button>
         </div>
 
-            <div><img src="imagens/vs.png" alt=""></div>
+            <div><img src="imagens/vs.png" alt="Luta VS"></div>
 
         <div class="rival">
             <img class="equiperocket" src="imagens/pokemons/equiperocketrival.png" alt="Equipe Rocket Pokémon">
             <div id="hpInimigo"></div>
         </div>
+        
+        <div id="popup"></div>
 
         <audio controls autoplay class="musicas" loop="true">
             <source src="musicas/battlemusic.mp3" type="audio/mp3">
         </audio>
         <audio controls class="efeitoatk" loop="false">
             <source src="musicas/efeitoatk.mp3" type="audio/mp3">
+        </audio>
+        <audio controls class="efeitocura" loop="false">
+            <source src="musicas/esCura.mp3" type="audio/mp3">
+        </audio>
+        <audio controls class="efeitovitoria" loop="false">
+            <source src="musicas/esVitoria.mp3" type="audio/mp3">
         </audio>
 
     </main>
