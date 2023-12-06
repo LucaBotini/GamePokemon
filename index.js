@@ -40,13 +40,14 @@ function atkER(){
 //FUNÇÃO AO CLICAR EM ATACAR
 function atkC(){
     let atkCharmander = gerarNumeroAleatorio(5, 40);
-    popup1.textContent = `VOCÊ ATACOU EQUIPE ROCKET COM ${atkCharmander} DE DANO`;
+  popup.style.backgroundColor = 'red';
+  popup1.textContent = `VOCÊ ATACOU EQUIPE ROCKET COM ${atkCharmander} DE DANO`;
     return atkCharmander;
 }
 
 function executarAtaque() {
     //EXECUTANDO ATAQUE
-    let ataque = atkC();
+      let ataque = atkC();
     //DIMINUINDO LIFE INIMIGA
     hpInimigo = hpInimigo - ataque;
     //MOSTRANDO LIFE INIMIGA
@@ -57,7 +58,7 @@ function executarAtaque() {
       hpCharmander = hpCharmander - ataqueER;
       //MOSTRANDO LIFE INIMIGA
       mostrarhpCharmanderr.textContent = `HP DO CHARMANDER: ${hpCharmander}`;
-    
+
       if(hpCharmander <= 0){     
         barulhoatk.disabled = true
         mostrarhpCharmanderr.textContent = `HP DO CHARMANDER: 0`;
@@ -71,13 +72,18 @@ function executarAtaque() {
         esVitoria.play();
         alert('Você Venceu!')
     }
+
+    setTimeout(() => {
+      barulhoatk.disabled = false;
+    }, 3000);
 }
 
 //FUNÇÃO AO CLICAR EM CURAR
 function curarC(){
   let curaCharmander = gerarNumeroAleatorio(1, 17);
+  // popup1.style.display = 'none';
+  // popup1.style.padding = '0%';
   popup.style.backgroundColor = 'blue';
-  popup.style.Color = 'white';
   popup.textContent = `VOCÊ SE CUROU COM ${curaCharmander} DE HP`;
   return curaCharmander;
 }
@@ -125,9 +131,6 @@ function gerarNumeroAleatorio(min, max) {
 }
 
 
-document.querySelector('audio').volume = 0.2;
-
-
 function exibirPopup() {
   var popup = document.getElementById('popup');
   var popup1 = document.getElementById('popup1');
@@ -141,3 +144,13 @@ function exibirPopup() {
       popup1.style.display = 'none';
   }, 2500);
 }
+
+
+//MIXER DE VOLUME
+document.querySelector('audio').volume = 0.1;
+
+document.addEventListener("DOMContentLoaded", function () {
+  let somcura = document.getElementById('somcura');
+  
+  somcura.volume = 0.1;
+});

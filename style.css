@@ -38,6 +38,34 @@ header{
     font-family: 'Pokemon Solid', sans-serif;
 }
 
+.att{
+    background-color: rgba(0, 0, 0, 0.473);
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid;
+    height: max-content;
+    width: max-content;
+}
+
+.iniciar a{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0, 255, 34, 0.233);
+    width: 100px;
+    border-radius: 50px;
+    margin-top: 20px;
+    border: solid 1px;
+}
+
+
 .estamosfelizes{
     border-top: solid;
     border-bottom: solid;
