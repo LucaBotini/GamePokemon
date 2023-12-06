@@ -85,6 +85,8 @@ function curarC(){
   // popup1.style.padding = '0%';
   popup.style.backgroundColor = 'blue';
   popup.textContent = `VOCÊ SE CUROU COM ${curaCharmander} DE HP`;
+  popup1.textContent = null;
+  popup1.style.display = none;
   return curaCharmander;
 }
 

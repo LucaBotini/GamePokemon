@@ -11,7 +11,13 @@ html{box-sizing: border-box;font-size: 16px;}:before,*:after {box-sizing: inheri
       transform: scale(1);
     }
   }
-
+  @keyframes shake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-5px, 5px); }
+    50% { transform: translate(5px, -5px); }
+    75% { transform: translate(-5px, 5px); }
+    100% { transform: translate(0, 0); }
+  }
 body{
     height: 89vh;
     background-image: url(imagens/background.jpg);
@@ -147,6 +153,7 @@ form{
 }
 
 .pokemon{
+    position: relative;
     width: 700px;
 }
 
@@ -197,6 +204,7 @@ form{
 }
 
 .equiperocket{
+    animation: shake 5s ease-in-out infinite;
     width: 700px;
 }
 
@@ -209,7 +217,7 @@ form{
     display: none;
     position: fixed;
     bottom: 30%;
-    left: 36%;
+    left: 25%;
     transform: translate(-50%, -50%);
     padding: 20px;
     background-color: red;
@@ -217,6 +225,7 @@ form{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000; 
     transition: 2s;
+    animation: shake 1s ease-in-out infinite;
 }
 #popup1 {
     display: none;
@@ -229,4 +238,5 @@ form{
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000; 
+    animation: shake 1s ease-in-out infinite;
 }
