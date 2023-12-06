@@ -10,6 +10,7 @@ let hpSquirtle = 160;
 let atkCharmander;
 let atkBulbasaur = gerarNumeroAleatorio(15, 25);
 let atkSquirtle = gerarNumeroAleatorio(8, 35);
+let equipeRocketAtk;
 
 //CURA DE CADA POKÉMON
 let curaCharmander;
@@ -26,24 +27,48 @@ let mostrarhpCharmanderr = document.getElementById('hpCharmanderr')
 mostrarhpCharmanderr.textContent = `HP DO CHARMANDER: ${hpCharmander}`
 
 //MENSAGEM NA TELA PÓS CLIQUES
-let popup = document.getElementById('popup')
+let popup1 = document.getElementById('popup1') //MEU ATAQUE
+let popup = document.getElementById('popup') //ATAQUE ADVERSARIO
+
+//FUNÇÃO ATAQUE EQUIPE ROCKET
+function atkER(){
+  let equipeRocketAtk = gerarNumeroAleatorio(10, 40);
+  popup.textContent = `VOCÊ FOI ATACADO PELA EQUIPE ROCKET COM ${equipeRocketAtk} DE DANO`;
+  return equipeRocketAtk;
+}
 
 //FUNÇÃO AO CLICAR EM ATACAR
 function atkC(){
     let atkCharmander = gerarNumeroAleatorio(5, 40);
-    popup.textContent = `VOCÊ ATACOU EQUIPE ROCKET COM ${atkCharmander} DE DANO`;
+    popup1.textContent = `VOCÊ ATACOU EQUIPE ROCKET COM ${atkCharmander} DE DANO`;
     return atkCharmander;
 }
 
 function executarAtaque() {
+    //EXECUTANDO ATAQUE
     let ataque = atkC();
+    //DIMINUINDO LIFE INIMIGA
     hpInimigo = hpInimigo - ataque;
-    
+    //MOSTRANDO LIFE INIMIGA
     mostrarhpInimigo.textContent = `HP DO RIVAL: ${hpInimigo}`;
+    //TOMANDO HIT DE VOLTA
+      let ataqueER = atkER();
+      //DIMINUINDO LIFE ALIADA
+      hpCharmander = hpCharmander - ataqueER;
+      //MOSTRANDO LIFE INIMIGA
+      mostrarhpCharmanderr.textContent = `HP DO CHARMANDER: ${hpCharmander}`;
+    
+      if(hpCharmander <= 0){     
+        barulhoatk.disabled = true
+        mostrarhpCharmanderr.textContent = `HP DO CHARMANDER: 0`;
+        alert('Você Perdeu!')
+    }
+
+
     if(hpInimigo <= 0){
+        barulhoatk.disabled = true
         mostrarhpInimigo.textContent = `HP DO RIVAL: 0`;
         esVitoria.play();
-        barulhoatk.disabled = true
         alert('Você Venceu!')
     }
 }
@@ -51,6 +76,8 @@ function executarAtaque() {
 //FUNÇÃO AO CLICAR EM CURAR
 function curarC(){
   let curaCharmander = gerarNumeroAleatorio(1, 17);
+  popup.style.backgroundColor = 'blue';
+  popup.style.Color = 'white';
   popup.textContent = `VOCÊ SE CUROU COM ${curaCharmander} DE HP`;
   return curaCharmander;
 }
@@ -103,11 +130,14 @@ document.querySelector('audio').volume = 0.2;
 
 function exibirPopup() {
   var popup = document.getElementById('popup');
+  var popup1 = document.getElementById('popup1');
   
   popup.style.display = 'block';
+  popup1.style.display = 'block';
 
   // Ocultar o popup após 3 segundos (3000 milissegundos)
   setTimeout(function() {
       popup.style.display = 'none';
-  }, 3000);
+      popup1.style.display = 'none';
+  }, 2500);
 }
