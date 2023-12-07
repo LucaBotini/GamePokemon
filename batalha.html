@@ -21,8 +21,8 @@
         <div class="pokemon">
             <div id="hpCharmanderr"></div>
             <img src="imagens/pokemons/chamander2.svg" alt="Charmander Batalhando">
-            <button class="buttonatk" id="botaoatk" onclick="executarAtaque(), exibirPopup()">Atacar</button>
-            <button class="buttoncurar" id="botaocura" onclick="executarCura(), exibirPopup()">Curar</button>
+            <button class="buttonatk" id="botaoatk" onclick="executarAtaque(), exibirPopup(), perderLife()">Atacar</button>
+            <button class="buttoncurar" id="botaocura" onclick="executarCura(), popupCura()">Curar</span></button>
         </div>
 
             <div><img class="vs" src="imagens/vs.png" alt="Luta VS"></div>
@@ -34,6 +34,7 @@
         
         <div id="popup1"></div>
         <div id="popup"></div>
+        <div id="popup3"></div>
 
         <audio controls autoplay class="musicas" loop="true">
             <source src="musicas/battlemusic.mp3" type="audio/mp3">

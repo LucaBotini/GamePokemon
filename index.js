@@ -1,5 +1,5 @@
 let danoFinal = 0;
-let hpInimigo = 230
+let hpInimigo = 230;
 
 //HP DE CADA POKÉMON
 let hpCharmander = 170;
@@ -29,10 +29,12 @@ mostrarhpCharmanderr.textContent = `HP DO CHARMANDER: ${hpCharmander}`
 //MENSAGEM NA TELA PÓS CLIQUES
 let popup1 = document.getElementById('popup1') //MEU ATAQUE
 let popup = document.getElementById('popup') //ATAQUE ADVERSARIO
+let popup3 = document.getElementById('popup3') //MINHA CURA
+
 
 //FUNÇÃO ATAQUE EQUIPE ROCKET
 function atkER(){
-  let equipeRocketAtk = gerarNumeroAleatorio(10, 40);
+  let equipeRocketAtk = gerarNumeroAleatorio(5, 40);
   popup.textContent = `VOCÊ FOI ATACADO PELA EQUIPE ROCKET COM ${equipeRocketAtk} DE DANO`;
   return equipeRocketAtk;
 }
@@ -44,6 +46,7 @@ function atkC(){
   popup1.textContent = `VOCÊ ATACOU EQUIPE ROCKET COM ${atkCharmander} DE DANO`;
     return atkCharmander;
 }
+
 
 function executarAtaque() {
     //EXECUTANDO ATAQUE
@@ -59,8 +62,20 @@ function executarAtaque() {
       //MOSTRANDO LIFE INIMIGA
       mostrarhpCharmanderr.textContent = `HP DO CHARMANDER: ${hpCharmander}`;
 
+      //CRIANDO DELAY PARA ATK
+      barulhoatk.style.pointerEvents = 'none';
+      barulhoatk.style.borderColor = 'red';
+    
+    
+      setTimeout(function() {
+      barulhoatk.style.pointerEvents = '';
+      barulhoatk.style.borderColor = 'rgb(60, 250, 2)';
+    }, 2500);
+
+    //CONDIÇÕES
       if(hpCharmander <= 0){     
         barulhoatk.disabled = true
+        barulhocura.disabled = true
         mostrarhpCharmanderr.textContent = `HP DO CHARMANDER: 0`;
         alert('Você Perdeu!')
     }
@@ -68,25 +83,28 @@ function executarAtaque() {
 
     if(hpInimigo <= 0){
         barulhoatk.disabled = true
+        barulhocura.disabled = true
         mostrarhpInimigo.textContent = `HP DO RIVAL: 0`;
         esVitoria.play();
         alert('Você Venceu!')
     }
 
-    setTimeout(() => {
-      barulhoatk.disabled = false;
-    }, 3000);
 }
 
 //FUNÇÃO AO CLICAR EM CURAR
 function curarC(){
-  let curaCharmander = gerarNumeroAleatorio(1, 17);
-  // popup1.style.display = 'none';
-  // popup1.style.padding = '0%';
-  popup.style.backgroundColor = 'blue';
-  popup.textContent = `VOCÊ SE CUROU COM ${curaCharmander} DE HP`;
-  popup1.textContent = null;
-  popup1.style.display = none;
+  let curaCharmander = gerarNumeroAleatorio(7, 25);
+  popup3.textContent = `VOCÊ SE CUROU COM ${curaCharmander} DE HP`;
+  
+  barulhocura.style.pointerEvents = 'none';
+  barulhocura.style.borderColor = 'red';
+
+
+  setTimeout(function() {
+  barulhocura.style.pointerEvents = '';
+  barulhocura.style.borderColor = 'rgb(0, 255, 242)';
+}, 6000);
+
   return curaCharmander;
 }
 
@@ -102,7 +120,6 @@ function executarCura() {
       alert('Você Perdeu!')
   }
 }
-
 
 let barulhocura = document.getElementById('botaocura')
 let audioCura = new Audio('./musicas/esCura.mp3');
@@ -132,10 +149,21 @@ function gerarNumeroAleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function popupCura(){
+  let popup3 = document.getElementById('popup3')
+
+  popup3.style.display = 'block';
+
+
+  setTimeout(function() {
+    popup3.style.display = 'none';
+}, 2500);
+}
+
 
 function exibirPopup() {
-  var popup = document.getElementById('popup');
-  var popup1 = document.getElementById('popup1');
+  let popup = document.getElementById('popup');
+  let popup1 = document.getElementById('popup1');
   
   popup.style.display = 'block';
   popup1.style.display = 'block';
