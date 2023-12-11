@@ -1,5 +1,5 @@
 let danoFinal = 0;
-let hpInimigo = 170;
+let hpInimigo = 150;
 let resultado;
 //HP DE CADA POKÉMON
 let hpCharmander = 170;
@@ -23,12 +23,12 @@ let curaSquirtle = gerarNumeroAleatorio(4, 12);
 
 //MOSTAR VIDA DO RIVAL
 let mostrarhpInimigo = document.getElementById('hpInimigo')
-mostrarhpInimigo.textContent = `HP DO GENGAR: ${hpInimigo}`
+mostrarhpInimigo.textContent = `HP DO PRIMEAPE: ${hpInimigo}`
 
 
 //MOSTRAR VIDA DO MEU POKÉMON
-let mostrarhpBulbasaur = document.getElementById('hpCharmanderr')
-mostrarhpBulbasaur.textContent = `HP DO SQUIRTLE: ${hpBulbasaur}`
+let mostrarhpSquirtle = document.getElementById('hpCharmanderr')
+mostrarhpSquirtle.textContent = `HP DO SQUIRTLE: ${hpSquirtle}`
 
 //MENSAGEM NA TELA PÓS CLIQUES
 let popup1 = document.getElementById('popup1') //MEU ATAQUE
@@ -36,20 +36,20 @@ let popup = document.getElementById('popup') //ATAQUE ADVERSARIO
 let popup3 = document.getElementById('popup3') //MINHA CURA
 
 
-//FUNÇÃO ATAQUE GENGAR
+//FUNÇÃO ATAQUE PRIMEAPE
 function atkER(){
   let equipeRocketAtk = gerarNumeroAleatorio(15, 25);
-  popup.textContent = `VOCÊ FOI ATACADO POR GENGAR COM ${equipeRocketAtk} DE DANO`;
-  hpBulbasaur = hpBulbasaur - equipeRocketAtk
+  popup.textContent = `VOCÊ FOI ATACADO POR PRIMEAPE COM ${equipeRocketAtk} DE DANO`;
+  hpSquirtle = hpSquirtle - equipeRocketAtk
   return equipeRocketAtk;
 }
 
 //FUNÇÃO AO CLICAR EM ATACAR
 function atkC(){
-    let atkCharmander = gerarNumeroAleatorio(5, 40);
+    let atkSquirtle = gerarNumeroAleatorio(8, 35);
   popup.style.backgroundColor = 'red';
-  popup1.textContent = `VOCÊ ATACOU GENGAR COM ${atkCharmander} DE DANO`;
-    return atkCharmander;
+  popup1.textContent = `VOCÊ ATACOU PRIMEAPE COM ${atkSquirtle} DE DANO`;
+    return atkSquirtle;
 }
 
 
@@ -59,11 +59,11 @@ function executarAtaque() {
     //DIMINUINDO LIFE INIMIGA
     hpInimigo = hpInimigo - ataque;
     //MOSTRANDO LIFE INIMIGA
-    mostrarhpInimigo.textContent = `HP DO GENGAR: ${hpInimigo}`;
+    mostrarhpInimigo.textContent = `HP DO PRIMEAPE: ${hpInimigo}`;
     //TOMANDO HIT DE VOLTA
       atkER();
       //MOSTRANDO LIFE ALIADA
-      mostrarhpBulbasaur.textContent = `HP DO SQUIRTLE: ${hpBulbasaur}`;
+      mostrarhpSquirtle.textContent = `HP DO SQUIRTLE: ${hpSquirtle}`;
 
       //CRIANDO DELAY PARA ATK
       barulhoatk.style.pointerEvents = 'none';
@@ -76,20 +76,20 @@ function executarAtaque() {
     }, 2500);
 
     //CONDIÇÕES
-      if(hpBulbasaur <= 0){     
+      if(hpSquirtle <= 0){     
         let esDerrota = new Audio('./musicas/derrotaBattle.mp3');
         esDerrota.play()
-        mostrarhpBulbasaur.textContent = `HP DO SQUIRTLE: 0`;
+        mostrarhpSquirtle.textContent = `HP DO SQUIRTLE: 0`;
         barulhoatk.disabled = true
         barulhocura.disabled = true
-        mostrarhpBulbasaur.textContent = `HP DO SQUIRTLE: 0`;
+        mostrarhpSquirtle.textContent = `HP DO SQUIRTLE: 0`;
     }
 
 
     if(hpInimigo <= 0){
         barulhoatk.disabled = true
         barulhocura.disabled = true
-        mostrarhpInimigo.textContent = `HP DO GENGAR: 0`;
+        mostrarhpInimigo.textContent = `HP DO PRIMEAPE: 0`;
         esVitoria.play();
     }
 
@@ -98,9 +98,9 @@ function executarAtaque() {
 //FUNÇÃO AO CLICAR EM CURAR
 function curarC(){
   //GERANDO CURA
-  let curaBulbasaur = gerarNumeroAleatorio(10, 14);
-  hpBulbasaur = hpBulbasaur + curaBulbasaur;
-  popup3.textContent = `VOCÊ SE CUROU COM ${curaBulbasaur} DE HP`;
+  let curaSquirtle = gerarNumeroAleatorio(10, 14);
+  hpSquirtle = hpSquirtle + curaSquirtle;
+  popup3.textContent = `VOCÊ SE CUROU COM ${curaSquirtle} DE HP`;
       //TOMANDO HIT DE VOLTA
       atkER();
   //ALTERANDO CORES POR DELAY
@@ -108,7 +108,7 @@ function curarC(){
   barulhocura.style.borderColor = 'red';
 
     //MOSTRANDO LIFE ALIADA
-    mostrarhpBulbasaur.textContent = `HP DO SQUIRTLE: ${hpBulbasaur}`;
+    mostrarhpSquirtle.textContent = `HP DO SQUIRTLE: ${hpSquirtle}`;
 
 //GERANDO DELAY
   setTimeout(function() {
@@ -116,7 +116,7 @@ function curarC(){
   barulhocura.style.borderColor = 'rgb(0, 255, 242)';
 }, 6000);
 
-  return curaBulbasaur;
+  return curaSquirtle;
 }
 
 function executarCura() {
@@ -127,10 +127,10 @@ function executarCura() {
   }, 2500);
   
     //DIMINUINDO LIFE ALIADA
-    if(hpBulbasaur <= 0){     
+    if(hpSquirtle <= 0){     
       let esDerrota = new Audio('./musicas/derrotaBattle.mp3');
       esDerrota.play()
-      mostrarhpBulbasaur.textContent = `HP DO SQUIRTLE: 0`;
+      mostrarhpSquirtle.textContent = `HP DO SQUIRTLE: 0`;
     }
 }
 
