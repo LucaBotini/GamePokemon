@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./imagens/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/noto-serif-malayalam" rel="stylesheet">
+    <title>Ginásio Pokémon</title>
+</head>
+<body class="ginasio">
+
+    <header>
+        <h1 class="bp">BATALHA POKÉMON</h1>
+    </header>
+
+    <h1 class="estamosfelizes">VOCÊ ESTÁ BATALHANDO CONTRA: <strong>GENGAR</strong></h1>
+    
+    <main class="mainbatalhaginasio">
+
+        <div class="pokemon">
+            <div id="hpCharmanderr"></div>
+            <img id="fotoCharmander" src="imagens/pokemons/squirtleATK.svg" alt="Bulbasaur Batalhando">
+            <button class="buttonatk" id="botaoatk" onclick="executarAtaque(), exibirPopup(), perderLife()">Atacar</button>
+            <button class="buttoncurar" id="botaocura" onclick="executarCura(), popupCura()">Curar</span></button>
+        </div>
+
+            <div><img class="vs" src="imagens/vs.png" alt="Luta VS"></div>
+
+        <div class="rival">
+            <img class="equiperocket" src="imagens/pokemons/gengarboss.svg" alt="Equipe Rocket Pokémon">
+            <div id="hpInimigo"></div>
+            <a href="ginasio.html"><div class="sair">&#127939; Sair</div></a>
+        </div>
+        
+        <div id="popup1"></div>
+        <div id="popup"></div>
+        <div id="popup3"></div>
+
+        <audio controls autoplay class="musicas" loop="true">
+            <source src="musicas/musicaBatalha2.mp3" type="audio/mp3">
+        </audio>
+        <audio controls class="efeitoatk" loop="false">
+            <source src="musicas/efeitoatk.mp3"  type="audio/mp3">
+        </audio>
+        <audio controls class="efeitocura" loop="false" id="somcura">
+            <source src="musicas/esCura.mp3" type="audio/mp3">
+        </audio>
+        <audio controls class="efeitovitoria" loop="false">
+            <source src="musicas/esVitoria.mp3" type="audio/mp3">
+        </audio>
+
+    </main>
+
+    <script src="squirtleAtk.js"></script>
+</body>

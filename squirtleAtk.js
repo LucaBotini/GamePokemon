@@ -28,7 +28,7 @@ mostrarhpInimigo.textContent = `HP DO GENGAR: ${hpInimigo}`
 
 //MOSTRAR VIDA DO MEU POKÉMON
 let mostrarhpBulbasaur = document.getElementById('hpCharmanderr')
-mostrarhpBulbasaur.textContent = `HP DO BULBASAUR: ${hpBulbasaur}`
+mostrarhpBulbasaur.textContent = `HP DO SQUIRTLE: ${hpBulbasaur}`
 
 //MENSAGEM NA TELA PÓS CLIQUES
 let popup1 = document.getElementById('popup1') //MEU ATAQUE
@@ -63,7 +63,7 @@ function executarAtaque() {
     //TOMANDO HIT DE VOLTA
       atkER();
       //MOSTRANDO LIFE ALIADA
-      mostrarhpBulbasaur.textContent = `HP DO BULBASAUR: ${hpBulbasaur}`;
+      mostrarhpBulbasaur.textContent = `HP DO SQUIRTLE: ${hpBulbasaur}`;
 
       //CRIANDO DELAY PARA ATK
       barulhoatk.style.pointerEvents = 'none';
@@ -79,10 +79,10 @@ function executarAtaque() {
       if(hpBulbasaur <= 0){     
         let esDerrota = new Audio('./musicas/derrotaBattle.mp3');
         esDerrota.play()
-        mostrarhpBulbasaur.textContent = `HP DO BULBASAUR: 0`;
+        mostrarhpBulbasaur.textContent = `HP DO SQUIRTLE: 0`;
         barulhoatk.disabled = true
         barulhocura.disabled = true
-        mostrarhpBulbasaur.textContent = `HP DO BULBASAUR: 0`;
+        mostrarhpBulbasaur.textContent = `HP DO SQUIRTLE: 0`;
     }
 
 
@@ -108,7 +108,7 @@ function curarC(){
   barulhocura.style.borderColor = 'red';
 
     //MOSTRANDO LIFE ALIADA
-    mostrarhpBulbasaur.textContent = `HP DO BULBASAUR: ${hpBulbasaur}`;
+    mostrarhpBulbasaur.textContent = `HP DO SQUIRTLE: ${hpBulbasaur}`;
 
 //GERANDO DELAY
   setTimeout(function() {
@@ -130,7 +130,7 @@ function executarCura() {
     if(hpBulbasaur <= 0){     
       let esDerrota = new Audio('./musicas/derrotaBattle.mp3');
       esDerrota.play()
-      mostrarhpBulbasaur.textContent = `HP DO BULBASAUR: 0`;
+      mostrarhpBulbasaur.textContent = `HP DO SQUIRTLE: 0`;
     }
 }
 
