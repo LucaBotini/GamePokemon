@@ -20,14 +20,14 @@ html{box-sizing: border-box;font-size: 16px;}:before,*:after {box-sizing: inheri
   }
 body{
     height: 89vh;
-    background-image: url(imagens/background.jpg);
+    background-image: url(../imagens/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .ginasio{
     height: 89vh;
-    background-image: url(imagens/ginasio.jpg);
+    background-image: url(../imagens/ginasio.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
